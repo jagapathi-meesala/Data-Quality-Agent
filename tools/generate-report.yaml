@@ -1,0 +1,26 @@
+name: generate-report
+description: Generate a structured data-quality report from profiling, validation, and anomaly findings.
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    profile:
+      type: object
+    validation:
+      type: object
+    anomalies:
+      type: object
+  required:
+    - profile
+    - validation
+    - anomalies
+output_schema:
+  type: object
+  properties:
+    report:
+      type: object
+implementation:
+  type: script
+  path: generate_report.py
+  runtime: python3
+  timeout: 30

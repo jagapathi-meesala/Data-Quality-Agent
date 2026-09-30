@@ -1,0 +1,21 @@
+name: profile-dataset
+description: Profile a dataset and summarize its structure, types, missing values, and basic statistics.
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    path:
+      type: string
+      description: Path to the dataset file.
+  required:
+    - path
+output_schema:
+  type: object
+  properties:
+    profile:
+      type: object
+implementation:
+  type: script
+  path: profile_dataset.py
+  runtime: python3
+  timeout: 30

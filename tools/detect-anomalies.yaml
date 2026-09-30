@@ -1,0 +1,21 @@
+name: detect-anomalies
+description: Detect statistical anomalies and unusual values in a dataset.
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    path:
+      type: string
+      description: Path to the dataset file.
+  required:
+    - path
+output_schema:
+  type: object
+  properties:
+    anomalies:
+      type: array
+implementation:
+  type: script
+  path: detect_anomalies.py
+  runtime: python3
+  timeout: 30

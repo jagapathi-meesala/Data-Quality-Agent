@@ -1,0 +1,26 @@
+name: validate-data
+description: Validate a dataset against structural and data-quality rules.
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    path:
+      type: string
+      description: Path to the dataset file.
+    rules:
+      type: object
+      description: Validation rules to apply.
+  required:
+    - path
+output_schema:
+  type: object
+  properties:
+    valid:
+      type: boolean
+    issues:
+      type: array
+implementation:
+  type: script
+  path: validate_data.py
+  runtime: python3
+  timeout: 30
